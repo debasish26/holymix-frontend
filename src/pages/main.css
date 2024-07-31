@@ -1,0 +1,695 @@
+/* App.css */
+/* App.css */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Webkit-based browsers */
+/* App.css */
+
+/* Webkit-based browsers */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #121212; /* fallback for old browsers */
+    overflow-x: hidden;
+  
+    height: 100%;
+  
+    /* code to make all text unselectable */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+/* Disables selector ring */
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+  /* fonts */
+
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  hr{
+    width: 80%;
+    color: white;
+  }
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 4px; /* Height of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: black; /* Background color of the scrollbar track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: blue; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+  }
+  
+  
+  .app {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+  }
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Default height */
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, z-index 0s 0.5s;
+    box-shadow: inset 255px -157px 141px 158px rgb(0 0 0);  /* Adjusted box shadow */
+    z-index: 0;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide-content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px; /* Adjusted padding */
+    font-family: "Poppins", sans-serif;
+    color: white;
+  }
+  
+  .slide-content h1 {
+    font-size: 24px; /* Adjusted font size */
+    margin-bottom: 10px;
+  }
+  
+  .slide-info {
+    margin-top: 10px;
+  }
+  
+  .slide-genre {
+    padding: 2px 5px; /* Adjusted padding */
+  }
+  
+  .tv {
+    color: white;
+  }
+  
+  .hd {
+    margin: 0 3px;
+    display: inline-block;
+    background: #0d6efd;
+    padding: 2px 6px;
+    color: white;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 12px; /* Adjusted font size */
+  }
+  
+  .watch-btn {
+    margin-top: 10px;
+  }
+  
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+  }
+  
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+  
+  .dot.active {
+    width: 9px;
+    height: 9px;
+    background-color: #fff;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .slideshow-container {
+     
+      height: 60vh;
+    }
+        .slide{
+          box-shadow: inset 0 -90px 112px 110px rgb(0 0 0);
+        }
+    
+    .slide-content {
+      width: 68%;
+      padding: 0 10px;
+      text-align: center;
+      text-align: left;
+    }
+  
+    .slide-content h1 {
+      font-size: 18px;
+    }
+  
+    .hd {
+      font-size: 10px;
+      padding: 1px 4px;
+    }
+  
+    .dots-container {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  
+  .cards-container {
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+  }
+  
+  .cards-container h2 {
+    padding-bottom: 15px;
+    padding-left: 30px;
+  }
+  
+  .cards-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(254, 253, 253, 0.327) transparent;; /* Firefox */
+    margin-left: 30px;
+
+  }
+  
+  .cards {
+    display: inline-block;
+  }
+  
+  .card {
+    width: 200px;
+    height: 250px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    transition: transform 0.3s;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 1s;
+  }
+  
+  .card:hover .card-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card h3 {
+    font-size: 12px;
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Prevent line breaks */
+  }
+  
+  .card:hover h3 {
+    white-space: normal; /* Allow the title to expand on hover */
+  }
+  
+  .cards-container-notscroll {
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+  }
+  .cards-container-notscroll h2 {
+    padding-bottom: 15px;
+    padding-left: 30px;
+  }
+  
+  .cards-notscroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card-notscroll {
+    width: 230px;
+    height: 300px;
+    background-color: #222;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    transition: transform 0.3s;
+  }
+  
+  .card-notscroll:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content-notscroll {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 1s;
+  }
+  
+  .card-notscroll:hover .card-content-notscroll {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .cards-notscroll {
+      gap: 10px;
+      padding: 7px;
+    }
+  
+    .card-notscroll {
+      width: calc(50% - 10px); /* Adjust width to fit two cards in a row */
+      border-radius: 15px;
+    }
+  }
+  
+  /* Media Query for Smaller Mobile Devices */
+  @media (max-width: 480px) {
+    .card-notscroll {
+      
+      width: calc(50% - 10px); /* Adjust width to fit two cards in a row */
+      height: 250px; /* Adjust height if needed */
+    }
+  }
+  
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  /* Footer.css */
+  
+  .footer {
+    background-color: #333; /* Background color of the footer */
+    color: white; /* Text color */
+    padding: 20px 0; /* Padding inside the footer */
+    background-image: url('https://s4.anilist.co/file/anilistcdn/media/anime/banner/156822-y0wPQIl3AHDA.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire area of the footer */
+    background-position: center; /* Center the background image */
+  }
+  
+  .footer__inner {
+    max-width: 1200px; /* Maximum width of the content inside the footer */
+    margin: 0 auto; /* Center align the content */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer__social {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer__social li {
+    display: inline-block;
+  }
+  
+  .footer__social li a {
+    color: white; /* Color of social media icons */
+  }
+  
+  .footer__message {
+    margin-top: 10px; /* Spacing between the social icons and the message */
+  }
+  
+
+  .server-container{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 25px;
+  
+  }
+
+
+  /* styles.css */
+.watch-container {
+    height: auto;
+    margin: 20px;
+    border-radius: 0.5rem;
+    background-color: #2d3748;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.watch-info {
+    width: 100%;
+    font-size: 12px;
+    background-color: #fbd38d;
+    color: #000000;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.watch-info p {
+    margin-top: 0.5rem;
+}
+  
+.video-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.video-controls button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.video-controls button.active {
+  background-color: #8b5cf6;
+  color: #ffffff;
+}
+
+.video-controls button.inactive {
+  background-color: #4a5568;
+  color: #d2d6dc;
+}
+
+.episode-data{
+  width: 25%;
+}
+@media (min-width: 768px) {
+    .watch-container {
+        flex-direction: row;
+    }
+
+    .watch-info {
+        width: auto;
+        min-height: 100%;
+        border-radius: 0.5rem 0 0 0.5rem;
+        text-align: left;
+    }
+
+    .video-controls {
+      
+        padding: 1rem;
+    }
+
+    .video-controls .flex {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .video-controls .flex button {
+        margin: 0 5px;
+        width: auto;
+    }
+}
+  .episode-list {
+    padding: 1rem;
+    background-color: #4a5568;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .episode-list select {
+    background-color: #4a5568;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .episode-list input {
+    background-color: #4a5568;
+    color: #ffffff;
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  
+  .episode-list svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #d2d6dc;
+  }
+  
+
+  .grid-contain{
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr)); /* grid-cols-10 */
+    gap: 1rem; /* gap-4 */
+  }
+  .container-one{
+    grid-column: span 7;
+  }
+  .container-two{
+    grid-column: span 3;
+  }
+
+  .characters{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .promotional-video{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .video-contain{
+    width: 100%;
+    display: flex;
+  }
+  @media (max-width: 768px) {
+.grid-contain{
+  display: block;
+    }
+    .characters{
+      grid-template-columns: repeat(2 , minmax(0,1fr));
+    }
+    .promotional-video{
+   
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    
+    }
+    .video-contain{
+      flex-direction: column;
+    }
+  }
+  
+    /* Media Query for Smaller Mobile Devices */
+    @media (max-width: 480px) {
+      .card-notscroll {
+        
+        width: calc(50% - 10px); /* Adjust width to fit two cards in a row */
+        height: 250px; /* Adjust height if needed */
+      }
+      .server-info{
+        font-size: 12px;
+      }
+      .watch-container{
+        margin: 10px;
+        padding: 8px;
+      }
+      .episode-data{
+        width: 90%;
+      }
+    }
+    
+
+    
+h1 {
+  color: white;
+
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.flex-container {
+  width: 100vw;
+
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  width: 500px;
+  height: 350px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 350px;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background: #1f1f1f;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+}
+
+.subtitle {
+  font-size: 11px;
+
+  color: rgba(177, 177, 177, 0.3);
+}
+
+input {
+  border: none;
+  border-bottom: solid rgb(143, 143, 143) 1px;
+
+  margin-bottom: 30px;
+
+  background: none;
+  color: rgba(255, 255, 255, 0.555);
+
+  height: 35px;
+  width: 300px;
+}
+
+.submit-btn {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+
+  box-shadow: 2px 2px 7px #38d39f70;
+
+  background: #38d39f;
+  color: rgba(255, 255, 255, 0.8);
+
+  width: 80px;
+
+  transition: all 1s;
+}
+
+.submit-btn:hover {
+  color: rgb(255, 255, 255);
+
+  box-shadow: none;
+}
